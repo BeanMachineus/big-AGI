@@ -423,6 +423,13 @@ const _knownLocalAIChatModels: ManualMappings = [
     interfaces: [LLM_IF_OAI_Chat],
   },
   {
+    idPrefix: 'l3-8b-stheno-v3.2-iq-imatrix',
+    label: 'GPT4All-J',
+    description: 'Stheno v3.2',
+    contextWindow: 8125,
+    interfaces: [LLM_IF_OAI_Chat],
+  },
+  {
     idPrefix: 'luna-ai-llama2',
     label: 'Luna AI Llama2 Uncensored',
     description: 'Luna AI Llama2 on LocalAI',
@@ -439,7 +446,7 @@ export function localAIModelToModelDescription(modelId: string): ModelDescriptio
       .replace('.bin', '')
       .replaceAll('-', ' '),
     description: 'Unknown localAI model. Please update `models.data.ts` with this ID',
-    contextWindow: null, // 'not provided'
+    contextWindow: 8125, // 'not provided'
     interfaces: [LLM_IF_OAI_Chat], // assume..
   });
 }
